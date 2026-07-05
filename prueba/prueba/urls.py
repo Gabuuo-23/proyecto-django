@@ -28,8 +28,8 @@ urlpatterns = [
     path('Contacto/',views_registros.contacto, name="Contacto"),
     path('Formulario/',views.Formulario, name="Formulario"),
     path('Ejemplo/',views.Ejemplo, name ="ejemplo"),
-    path('regitrar/',views_registros.registrar,name="Registrar")
-    #path('consultaContacto.html/',view.registrar,name="Consulta Comentarios"),
+    path('regitrar/',views_registros.registrar,name="Registrar"),
+    path('consultaComentarios/', views_registros.registrar, name="Consulta Comentarios"),
 ]
 
 if settings.DEBUG: 
