@@ -27,3 +27,5 @@ def registrar(request):
 def contacto(request):
     form = ComentarioContactoForm()
     return render(request, "registros/contacto.html", {'form': form})
+
+#ver
