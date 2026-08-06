@@ -1,0 +1,40 @@
+{% extends "inicio/encabezado.html" %}
+{% load static %}
+{% block titulo %} Consulta {% endblock %}
+{% block info %} Principal {% endblock %}
+{% block imagen %} {% static 'inicio/images/home.png' %}{% endblock %}
+
+{% block contenido %}
+
+    <div class="page-header">
+                <div class="page-title">
+                    <h3>Alumnos
+                <small>Lista de Alumnos </small></h3>
+                </div>
+            </div>
+{% endblock%}
+{%block contenido2%}
+            <table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>Foto</th>
+            <th>Matricula</th>
+            <th>Nombre</th>
+            <th>Carrera</th>
+            <th>Turno</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for alumno in alumnos %}
+        <tr>
+            <td><img src="{{ alumno.foto.url }}" alt="Foto" width="100"></td>
+            <td>{{ alumno.matricula }}</td>
+            <td>{{ alumno.nombre }}</td>
+            <td>{{ alumno.carrera }}</td>
+            <td>{{ alumno.turno }}</td>
+        </tr>
+        {% endfor %}
+
+</table>
+        
+        {% endblock %}

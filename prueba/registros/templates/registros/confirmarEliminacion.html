@@ -1,0 +1,34 @@
+{% extends "inicio/encabezado.html" %}
+{% load static %}
+
+{% block titulo %}Eliminar{% endblock %}
+{% block info %}Eliminar{% endblock %}
+{% block imagen %}{% static 'inicio/images/registrar.png' %}{% endblock %}
+
+{% block contenido %}
+
+<div class="page-header">
+    <div class="page-title">
+        <h3>Eliminar Comentario</h3>
+        <p>
+            ¿Estás seguro de que deseas eliminar el comentario de
+            <strong>{{ comentario.usuario }}</strong>?
+        </p>
+        <p>{{ comentario.mensaje }}</p>
+    </div>
+</div>
+
+<form method="POST">
+    {% csrf_token %}
+    <button type="submit" class="btn btn-danger">Sí, eliminar</button>
+    <a href="{% url 'ConsultaComentarios' %}" class="btn btn-primary">Cancelar</a>
+
+    
+</form>
+
+{% endblock %}
+			
+
+			
+		
+		

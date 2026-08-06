@@ -10,6 +10,18 @@ class AdministrarModelo (admin.ModelAdmin):
     search_fields = ('matricula','nombre','carrera','turno')
     date_hierarchy = 'created'
     list_filter = ('carrera','turno')
+
+    def get_readonly_fields(self, request,obj=None):
+        if request.user.groups.filter(name="Usuarios").exists():
+            return('matricula','carrera','turno')
+        
+        elif request.user.groups.filter(name='GET').exists():
+            return('matricula','turno')
+        else:
+            return('created','update',)
+
+
+
 admin.site.register(Alumnos, AdministrarModelo)
 
 class AdministrarComentario (admin.ModelAdmin):

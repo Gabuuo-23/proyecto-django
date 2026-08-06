@@ -28,8 +28,18 @@ urlpatterns = [
     path('Contacto/',views_registros.contacto, name="Contacto"),
     path('Formulario/',views.Formulario, name="Formulario"),
     path('Ejemplo/',views.Ejemplo, name ="ejemplo"),
-    path('regitrar/',views_registros.registrar,name="Registrar"),
-    path('consultaComentarios/', views_registros.registrar, name="Consulta Comentarios"),
+    path('registrar/',views_registros.registrar,name="Registrar"),
+    path('consultaComentarios/', views_registros.registrar, name = "ConsultaComentarios"),
+    path('eliminarComentario/<int:id>/',views_registros.eliminarComentarioContacto,name='Eliminar'),
+    path('editarComentario/<int:id>/',views_registros.editarComentario,name = "Editar"),
+    path('consultas/',views_registros.Consultas, name="Consultas"),
+
+    path('consultar1/',views_registros.consultar1, name="Consultar1"),
+    path('consultar2/',views_registros.consultar2, name="Consultar2"),
+    path('consultar3/',views_registros.consultar3, name="Consultar3"),
+    path('consultar4/',views_registros.consultar4, name="Consultar4"),
+    path('consultar5/',views_registros.consultar5, name="Consultar5"),
+    #path('formEditarComentario/<int:id>/',views_registros.consultarComentarioIndividual,name='ConsultaIndividual'),
 ]
 
 if settings.DEBUG: 
