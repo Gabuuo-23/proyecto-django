@@ -1,20 +1,26 @@
 {% extends "inicio/encabezado.html" %}
 {% load static %}
+
 {% block titulo %} Principal {% endblock %}
 {% block info %} Principal {% endblock %}
 {% block imagen %} {% static 'inicio/images/home.png' %}{% endblock %}
 
 {% block contenido %}
 
-    <div class="page-header">
-                <div class="page-title">
-                    <h3>Alumnos
-                <small>Lista de Alumnos </small></h3>
-                </div>
-            </div>
-{% endblock%}
-{%block contenido2%}
-            <table class="table table-bordered table-striped">
+<div class="page-header">
+    <div class="page-title">
+        <h3>
+            Alumnos
+            <small>Lista de Alumnos</small>
+        </h3>
+    </div>
+</div>
+
+{% endblock %}
+
+{% block contenido2 %}
+
+<table>
     <thead>
         <tr>
             <th>Foto</th>
@@ -24,17 +30,20 @@
             <th>Turno</th>
         </tr>
     </thead>
+
     <tbody>
+        {% for alumno in alumnos %}
         <tr>
-            <td class="text-center">
-                <img src="" class="img-media">
+            <td>
+                <img src="{{ alumno.foto.url }}" width="80" height="80">
             </td>
-            <td class="text-semibold">UTM1234TIC</td>
-            <td class="muted">Nathalia</td>
-            <td class="muted">Tic</td>
-            <td class="muted">matutino</td>
+            <td>{{ alumno.matricula }}</td>
+            <td>{{ alumno.nombre }}</td>
+            <td>{{ alumno.carrera }}</td>
+            <td>{{ alumno.turno }}</td>
         </tr>
+        {% endfor %}
     </tbody>
 </table>
-        
-        {% endblock %}
+
+{% endblock %}

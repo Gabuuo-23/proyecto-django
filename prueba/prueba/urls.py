@@ -19,6 +19,7 @@ from django.urls import path
 from inicio import views
 from django.conf import settings
 from registros import views as views_registros
+from django.conf.urls.static import static 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -37,11 +38,25 @@ urlpatterns = [
     path('consultar1/',views_registros.consultar1, name="Consultar1"),
     path('consultar2/',views_registros.consultar2, name="Consultar2"),
     path('consultar3/',views_registros.consultar3, name="Consultar3"),
+    #tarea lunes
     path('consultar4/',views_registros.consultar4, name="Consultar4"),
     path('consultar5/',views_registros.consultar5, name="Consultar5"),
+    #practica
+    path('consultar6/',views_registros.consultar6, name="Consultar6"),
+    path('consultar7/',views_registros.consultar7, name="Consultar7"),
+    path('consultar8/',views_registros.consultar8, name="Consultar8"),
+    path('consultasSQL/',views_registros.consultasSQL, name="ConsultasSQL"),
+    path('consultarcomentario/',views_registros.consultarcomentario, name="ConsultarComentario"),
+    path('consultarexpresion/',views_registros.consultarexpresion, name="ConsultarExpresion"),
+    path('consultarusuario/',views_registros.consultarusuario, name="ConsultarUsuario"),
+    path('consultarendswith/',views_registros.consultarendswith, name="ConsultarEndsWith"),
+    path('consultarstard/',views_registros.consultarstard, name="ConsultarStartsWith"),
+    path('subir/',views_registros.archivos, name="subir"),
+    path('seguridad/',views_registros.seguridad, name="Seguridad"),
+    path('seguridad/',views_registros.seguridad, name="Seguridad"),
+
     #path('formEditarComentario/<int:id>/',views_registros.consultarComentarioIndividual,name='ConsultaIndividual'),
 ]
 
 if settings.DEBUG: 
-    from django.conf.urls.static import static 
     urlpatterns += static(settings.MEDIA_URL, document_root =settings.MEDIA_ROOT)
